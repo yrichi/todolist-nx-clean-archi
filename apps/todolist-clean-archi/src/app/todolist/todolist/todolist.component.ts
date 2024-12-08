@@ -1,7 +1,13 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {Component} from '@angular/core';
+import {CommonModule} from '@angular/common';
 import {AddTodolistComponent} from "../add-todolist/add-todolist.component";
-import {Todolist} from "@todolist-clean-archi/domain";
+import {
+  AfficherTodolistController
+} from "@todolist-clean-archi/adapter";
+import {Observable} from "rxjs";
+import {
+  AfficherTodolistsPresentationVM
+} from "@todolist-clean-archi/adapter";
 
 @Component({
   selector: 'app-todolist',
@@ -10,9 +16,24 @@ import {Todolist} from "@todolist-clean-archi/domain";
   styleUrl: './todolist.component.css',
 })
 export class TodolistComponent {
-  todos: Todolist[] = [{id:"1",valeur:"valeur test",titre:"premiere entre"}];
 
-  supprimerTodo(id: string) {
-    
+
+  $vm: Observable<AfficherTodolistsPresentationVM> = new Observable<AfficherTodolistsPresentationVM>(subscriber => {
+    this.afficherTodolistController.subscribeVM(vm => subscriber.next(vm))
+  })
+
+
+  constructor(private afficherTodolistController: AfficherTodolistController) {
+    this.afficherTodolistController.afficherTodolistNote()
+  }
+
+
+  supprimerTodo(id: string | undefined) {
+
+  }
+
+  reloadTodolist() {
+    console.log("test reload")
+    this.afficherTodolistController.afficherTodolistNote()
   }
 }

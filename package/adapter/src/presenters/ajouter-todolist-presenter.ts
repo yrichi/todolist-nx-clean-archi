@@ -16,10 +16,10 @@ export class AjouterTodolistPresenter extends Presenter<AjouterTodolistPresenter
   }
 
   notifyTodolist(todolist: Todolist): void {
-        this.vm.id = todolist.id;
-        this.vm.titre = todolist.titre;
-        this.vm.valeur = todolist.valeur;
-        this.notifyVM();
-    }
+    this.vm.id = todolist.id;
+    this.vm.titre = todolist.titre;
+    this.vm.valeur = todolist.valeur;
+    this.notifyVM();
+  }
 
 }

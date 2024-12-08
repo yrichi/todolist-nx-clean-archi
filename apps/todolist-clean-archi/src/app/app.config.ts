@@ -2,6 +2,7 @@ import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
 import { provideRouter } from '@angular/router';
 import { appRoutes } from './app.routes';
 import {
+  AfficherTodolistControllerProvider, AfficherTodolistPresenterProvider, AfficherTodolistUseCaseProvider,
   AjouterTodolistPresenterProvider,
   AjouterTodolistUseCaseProvider,
   AjoutTodolistControllerProvider
@@ -13,6 +14,9 @@ export const appConfig: ApplicationConfig = {
     provideRouter(appRoutes),
     AjoutTodolistControllerProvider,
     AjouterTodolistUseCaseProvider,
-    AjouterTodolistPresenterProvider
+    AjouterTodolistPresenterProvider,
+    AfficherTodolistControllerProvider,
+    AfficherTodolistUseCaseProvider,
+    AfficherTodolistPresenterProvider
   ],
 };
