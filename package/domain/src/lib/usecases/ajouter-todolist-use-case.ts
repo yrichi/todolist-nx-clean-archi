@@ -14,6 +14,7 @@ export class AjouterTodolistUseCase {
     presenter: AjoutTodolistPresentation
   ): Promise<void> {
     const todoListAdded: Todolist = await this.ajouterNoteTodolist(requestAjoutNoteTodoList)
+    console.log("id " +todoListAdded.id)
     presenter.notifyTodolist(todoListAdded)
   }
 

@@ -11,6 +11,7 @@ export class AjouterTodolistController extends Controller<AjouterTodolistPresent
   }
 
   ajoutTodolistNote(request: DemandeAjoutTodolistPresentation): void {
+    console.log("ajoute note ")
     this.ajouterTodolistUseCase.execute(request, this.presenter).then();
   }
 

@@ -1,6 +1,19 @@
-<h1>Liste de todolist</h1>
+<div class="todolist-container">
+  <h1 class="header">Liste de Todolist</h1>
 
+  <!-- Composant d'ajout de todo -->
+  <app-add-todolist></app-add-todolist>
 
-
-<app-add-todolist>
-</app-add-todolist>
+  <!-- Liste des todos existants -->
+  <div class="todolist">
+    <h2 class="todolist-header">Todos existants</h2>
+    <ul class="todo-list">
+      <li *ngFor="let todo of todos" class="todo-item">
+        <span class="todo-title">{{ todo.titre }}</span>
+        <span class="todo-note">{{ todo.valeur }}</span>
+        <button class="btn-delete" (click)="supprimerTodo(todo.id)">Supprimer</button>
+      </li>
+    </ul>
+    <p *ngIf="todos.length === 0" class="empty-list">Aucune Todo pour l'instant. Ajoutez-en une !</p>
+  </div>
+</div>

@@ -1,0 +1,86 @@
+/* Global Container */
+.todolist-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Header */
+.header {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Todolist Section */
+.todolist {
+  margin-top: 30px;
+}
+
+.todolist-header {
+  color: #007bff;
+  margin-bottom: 15px;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.todo-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.todo-item:hover {
+  background: #f1f1f1;
+}
+
+.todo-title {
+  font-weight: bold;
+  color: #333;
+}
+
+.todo-note {
+  color: #555;
+  margin-left: 10px;
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+/* Delete Button */
+.btn-delete {
+  background: #dc3545;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.btn-delete:hover {
+  background: #c82333;
+}
+
+/* Empty List Message */
+.empty-list {
+  text-align: center;
+  color: #888;
+  font-style: italic;
+  margin-top: 20px;
+}

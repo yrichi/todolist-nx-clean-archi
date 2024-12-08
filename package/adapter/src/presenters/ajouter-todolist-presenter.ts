@@ -11,6 +11,9 @@ export class AjouterTodolistPresenterVM {
 
 export class AjouterTodolistPresenter extends Presenter<AjouterTodolistPresenterVM> implements AjoutTodolistPresentation {
 
+  constructor() {
+    super(new AjouterTodolistPresenterVM());
+  }
 
   notifyTodolist(todolist: Todolist): void {
         this.vm.id = todolist.id;

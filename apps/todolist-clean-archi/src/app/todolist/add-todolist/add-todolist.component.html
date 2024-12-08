@@ -1,10 +1,36 @@
-<h1>ajout todolist</h1>
+<h1>Ajouter une Todo</h1>
 
-
-<form [formGroup]="ajoutTodo" (ngSubmit)="validerAjoutTodo()">
-  <div>
-    <p>ajout note</p>
-    <input aria-label="valeurTodo" type="text" formControlName="valeur">
+<form [formGroup]="ajoutTodo" (ngSubmit)="validerAjoutTodo()" class="todo-form">
+  <div class="form-group">
+    <label for="titre">Titre</label>
+    <input
+      id="titre"
+      aria-label="valeurTodo"
+      type="text"
+      formControlName="titre"
+      placeholder="Entrez un titre"
+      class="form-input"
+    />
   </div>
-  <button type="submit">Valider</button>
+  <div class="form-group">
+    <label for="valeur">Note</label>
+    <input
+      id="valeur"
+      aria-label="valeurTodo"
+      type="text"
+      formControlName="valeur"
+      placeholder="Entrez une note"
+      class="form-input"
+    />
+  </div>
+  <button type="submit" class="btn-submit">Valider</button>
 </form>
+
+<div *ngIf="($vm | async) as todo" class="todo-preview">
+  <h2>Détails de la Todo ajoutée</h2>
+  <ul>
+    <li><strong>ID:</strong> {{todo.id}}</li>
+    <li><strong>Titre:</strong> {{todo.titre}}</li>
+    <li><strong>Valeur:</strong> {{todo.valeur}}</li>
+  </ul>
+</div>
