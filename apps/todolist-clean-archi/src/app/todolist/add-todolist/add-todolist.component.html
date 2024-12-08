@@ -1,0 +1,10 @@
+<h1>ajout todolist</h1>
+
+
+<form [formGroup]="ajoutTodo" (ngSubmit)="validerAjoutTodo()">
+  <div>
+    <p>ajout note</p>
+    <input aria-label="valeurTodo" type="text" formControlName="valeur">
+  </div>
+  <button type="submit">Valider</button>
+</form>

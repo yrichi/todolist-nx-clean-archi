@@ -1,0 +1,26 @@
+{
+  "name": "adapter",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "package/adapter/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/package/adapter",
+        "main": "package/adapter/src/index.ts",
+        "tsConfig": "package/adapter/tsconfig.lib.json",
+        "assets": ["package/adapter/*.md"]
+      }
+    },
+    "test": {
+      "executor": "@nx/vite:test",
+      "outputs": ["{options.reportsDirectory}"],
+      "options": {
+        "reportsDirectory": "../../coverage/package/adapter"
+      }
+    }
+  }
+}
