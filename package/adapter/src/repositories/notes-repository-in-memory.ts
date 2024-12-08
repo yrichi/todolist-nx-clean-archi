@@ -9,7 +9,7 @@ export class NotesRepositoryInMemory implements NoteRepository {
     return Promise.resolve();
     }
 
-  afficherNotesTodolist(): Promise<Note[]> {
+  getNotes(): Promise<Note[]> {
     return Promise.resolve(this.notes);
   }
 

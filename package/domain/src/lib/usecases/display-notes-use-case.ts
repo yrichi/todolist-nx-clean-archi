@@ -10,7 +10,7 @@ export class DisplayNotesUseCase {
   }
 
   async execute(presenter: DisplayNotePresentation): Promise<void> {
-    const todoLists: Note[] = await this.noteRepository.afficherNotesTodolist();
+    const todoLists: Note[] = await this.noteRepository.getNotes();
     presenter.notifyNewNotes(todoLists)
   }
 
