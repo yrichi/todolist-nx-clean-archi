@@ -1,5 +1,5 @@
-import {Todolist} from "../../entity/todolist";
+import {Note} from "../../entity/note";
 
 export interface DemandeAfficherTodolistsPresentation {
-  todos: Todolist[]
+  todos: Note[]
 }

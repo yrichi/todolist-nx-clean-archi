@@ -1,0 +1,26 @@
+<div class="todolist-container">
+  <h1 class="header">Liste de Todolist</h1>
+
+  <!-- Composant d'ajout de todo -->
+  <app-add-todolist (noteAdded)="refreshNotest()"></app-add-todolist>
+
+  <!-- Liste des todos existants -->
+  <div class="todolist">
+    <h2 class="todolist-header">Notes existantes</h2>
+    <ul class="todo-list">
+
+      @for (note of ($vm | async)?.notes; track note.id) {
+        <li  class="todo-item">
+          <span class="todo-title">{{ note.titre }}</span>
+          <span class="todo-note">{{ note.valeur }}</span>
+          @if (note.id) {
+            <button class="btn-delete" (click)="supprimerNote(note.id)">Supprimer</button>
+          }
+
+        </li>
+      }
+
+    </ul>
+    <p *ngIf="($vm | async)?.notes?.length === 0" class="empty-list">Aucune note pour l'instant. Ajoutez-en une !</p>
+  </div>
+</div>

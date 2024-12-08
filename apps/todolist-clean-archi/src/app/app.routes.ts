@@ -1,6 +1,6 @@
 import { Route } from '@angular/router';
-import {TodolistComponent} from "./todolist/todolist/todolist.component";
+import {DisplayNotesComponent} from "./todolist/display-notes/display-notes.component";
 
 export const appRoutes: Route[] = [
-  {path:'',component: TodolistComponent}
+  {path:'',component: DisplayNotesComponent}
 ];

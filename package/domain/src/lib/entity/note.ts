@@ -1,4 +1,4 @@
-export interface Todolist {
+export interface Note {
   id: string;
   titre: string;
   valeur: string;
