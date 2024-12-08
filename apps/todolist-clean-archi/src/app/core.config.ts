@@ -3,7 +3,7 @@ import {AjouterTodolistUseCase, TodolistRepository} from "@todolist-clean-archi/
 import {AjouterTodolistController, TodolistInMemoriesRepository} from "@todolist-clean-archi/adapter";
 import {AjouterTodolistPresenter} from "@todolist-clean-archi/adapter";
 
-export const ITodolistRepository = new InjectionToken<TodolistRepository>('TodolistRepository', {
+export const TODOLIST_REPOSITORY_TOKEN = new InjectionToken<TodolistRepository>('TodolistRepository', {
   providedIn: 'root',
   factory: () => new TodolistInMemoriesRepository()
 })
@@ -14,15 +14,15 @@ export const AjoutTodolistControllerProvider = {
   useFactory: () => {
     const presenter = inject(AjouterTodolistPresenter);
     const usecase = inject(AjouterTodolistUseCase);
-    return new AjouterTodolistController(presenter,usecase);
+    return new AjouterTodolistController(presenter, usecase);
   }
 }
 
 
 export const AjouterTodolistUseCaseProvider = {
   provide: AjouterTodolistUseCase,
-  useFactory: ()=> {
-    const repository = inject(ITodolistRepository);
+  useFactory: () => {
+    const repository = inject(TODOLIST_REPOSITORY_TOKEN);
     return new AjouterTodolistUseCase(repository)
   }
 }
