@@ -5,5 +5,9 @@ export interface NoteRepository {
 
   getNotes(): Promise<Note[]>;
 
+  getNote(id: string ): Promise<Note>;
+
   deleteNote(id: string): Promise<void>;
+
+  updateNote(param: { valeur: string; titre: string; id: string }): Promise<Note>;
 }

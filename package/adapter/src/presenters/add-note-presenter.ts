@@ -5,6 +5,7 @@ export class addNotePresenterVM {
   id: string | undefined;
   titre: string | undefined;
   valeur: string | undefined;
+  version: number | undefined;
 
 }
 
@@ -19,6 +20,7 @@ export class AddNotePresenter extends Presenter<addNotePresenterVM> implements A
     this.vm.id = todolist.id;
     this.vm.titre = todolist.titre;
     this.vm.valeur = todolist.valeur;
+    this.vm.valeur = todolist.version;
     this.notifyVM();
   }
 
